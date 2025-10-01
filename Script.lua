@@ -143,3 +143,57 @@ local Button = Tab:CreateButton({
    game.Players.LocalPlayer.DataFolder.EquippingCoin.Value = "VainCoin"
    end,
 })
+
+local Toggle = Tab:CreateToggle({
+   Name = "뽑기 1회 토글",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    while true do
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local BuyGacha = ReplicatedStorage.Shared.Remotes.ShopRemotes.BuyGacha
+
+BuyGacha:FireServer(
+    "x1"
+)
+wait(0.3)
+end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "뽑기 10회 토글",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    while true do
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local BuyGacha = ReplicatedStorage.Shared.Remotes.ShopRemotes.BuyGacha
+
+BuyGacha:FireServer(
+    "x10"
+)
+wait(0.3)
+end
+   end,
+})
+
+local Toggle = Tab:CreateToggle({
+   Name = "뽑기 50회 토글",
+   CurrentValue = false,
+   Flag = "Toggle1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+    while true do
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local BuyGacha = ReplicatedStorage.Shared.Remotes.ShopRemotes.BuyGacha
+
+BuyGacha:FireServer(
+    "x50"
+)
+wait(0.3)
+end
+   end,
+})
